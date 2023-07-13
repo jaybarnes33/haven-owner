@@ -6,6 +6,9 @@ const Reservations = ({ bookings }: { bookings: Record<string, any>[] }) => {
     <div className="border  row-span-4  flex flex-col gap-3 mt-5 rounded">
       <h2 className="text-xl font-semibold px-6 pt-6">Reservations</h2>
       <div className="h-[80%] overflow-y-scroll px-6">
+        {!bookings?.length && (
+          <div className="bg-red-200 p-2 ">No bookings to show</div>
+        )}
         {bookings?.map((item, i) => (
           <div
             key={i}
